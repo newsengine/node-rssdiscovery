@@ -25,7 +25,7 @@ module.exports = function (options, cb) {
   });
   req.on('response', function (response) {
     if (response.statusCode !== 200) {
-      var err = new Error(req.httpModule.STATUS_CODES[response.statusCode] || 'Unknown HTTP response');
+      var err = new Error('Unknown HTTP response');
       err.code = response.statusCode;
       return onEnd(err);
     }
